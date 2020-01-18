@@ -33,12 +33,12 @@
     				
     	  			 <div class="col-6">
     					Funzione<br>
-        				|<?php 
+        				|<?php //Questa dovrebbe essere la parte monitor
         				//require 'CostruttoreBase.php';
         				if (isset($_POST['prova'])) {
         				    require 'backend/validitaform/ErroreInput.php';
-        				    $prv = new Nome($_POST['prova']);
-        				    echo $prv->controllo();
+        				    $nome = new Convalida($_POST['prova']);
+        				    echo $nome->controllo();
         				    //echo $prv->pulisci_input();
         				}
         				
