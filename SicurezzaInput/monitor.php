@@ -34,13 +34,16 @@
     	  			 <div class="col-6">
     					Funzione<br>
         				<?php 
-        				require '';
-        				echo $_POST[email];
+        				require 'backend/validitaform/convalida.php';
+        				$ogg = new sicurezza();
+        				echo $ogg->test_input();
+        				 
         				?>
     				 </div>
     				 <div class="col-6">
     					Senza funzione<br>
         				<?php 
+        				
         				echo $_POST[prova1];
         				?>
     				</div>
