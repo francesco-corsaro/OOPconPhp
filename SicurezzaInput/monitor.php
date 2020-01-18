@@ -19,7 +19,7 @@
     				<div class="titolo">inserimento dati sicuri</div>
     				
     				 <div class="col-6">	
-                      Funzioni <input name="email" type="TEXT" placeholder="Username"  required>
+                      Funzioni <input name="prova" type="TEXT" placeholder="Username"  required>
                      </div>
                       <div class="col-6">	
                        Senza funzioni<input name="prova1" type="TEXT" placeholder="Username"  required>
@@ -33,19 +33,21 @@
     				
     	  			 <div class="col-6">
     					Funzione<br>
-        				<?php 
-        				require 'backend/validitaform/convalida.php';
-        				$ogg = new sicurezza();
-        				echo $ogg->test_input();
+        				|<?php 
+        				require 'CostruttoreBase.php';
+        				$prv = new Convalida($_POST['prova']);
+        				echo $prv->pulisci_input();
+        				
+        				
         				 
-        				?>
+        				?>|	
     				 </div>
     				 <div class="col-6">
     					Senza funzione<br>
-        				<?php 
+        				|<?php 
         				
         				echo $_POST[prova1];
-        				?>
+        				?>|
     				</div>
     	</div>
 
