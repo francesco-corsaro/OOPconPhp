@@ -34,9 +34,14 @@
     	  			 <div class="col-6">
     					Funzione<br>
         				|<?php 
-        				require 'CostruttoreBase.php';
-        				$prv = new Convalida($_POST['prova']);
-        				echo $prv->pulisci_input();
+        				//require 'CostruttoreBase.php';
+        				if (isset($_POST['prova'])) {
+        				    require 'backend/validitaform/ErroreInput.php';
+        				    $prv = new Nome($_POST['prova']);
+        				    echo $prv->controllo();
+        				    //echo $prv->pulisci_input();
+        				}
+        				
         				
         				
         				 
