@@ -19,10 +19,16 @@
     				<div class="titolo">inserimento dati sicuri</div>
     				
     				 <div class="col-6">	
-                      Funzioni <input name="prova" type="TEXT" placeholder="Username"  required>
+                      <p>Funzioni</p> <div class="col-6">
+                      				<input name="prova" type="TEXT" placeholder="Username"  required>
+                      				<input name="pwd" type="password" placeholder="Password"  required>
+                     			</div>
                      </div>
                       <div class="col-6">	
-                       Senza funzioni<input name="prova1" type="TEXT" placeholder="Username"  required>
+                      <p> Senza funzioni</p><div class="col-6">
+                       					<input name="prova1" type="TEXT" placeholder="Username"  required>
+                       					<input name="pwd1" type="password" placeholder="Password"  required>
+                     				</div>
                      </div>
                      
 					<input type="submit" id="myBtn" value="Invia">
@@ -39,6 +45,8 @@
         				    require 'backend/validitaform/ErroreInput.php';
         				    $nome = new Convalida($_POST['prova']);
         				    echo $nome->controllo();
+        				    $pwd=new Convalida ($_POST['pwd']);
+        				    $pwd=controllo_Pwd();
         				    //echo $prv->pulisci_input();
         				}
         				
@@ -52,6 +60,7 @@
         				|<?php 
         				
         				echo $_POST[prova1];
+        				echo '<br>'.$_POST['pwd1'];
         				?>|
     				</div>
     	</div>
