@@ -26,19 +26,19 @@ class Convalida {
      
      } else {
         
-        return $this->pulisci_input();
+        return $this->pulisci_input;
      
      }
    
     }
-    function controllo_Pwd(){
+  /* function controllo_Pwd(){
         if (!preg_match("/^[a-zA-Z0-9 ]*$/",$this->name)) {
         return $this->errNomNum;
         
         
     } else {
-        
-        return $this->pulisci_input();
+        $this->pulisci_input=password_hash($this->pulisci_input, PASSWORD_DEFAULT);
+        return $this->pulisci_input;
         
     }
     
