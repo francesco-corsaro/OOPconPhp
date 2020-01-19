@@ -10,15 +10,15 @@ class Convalida {
     }
     
     function pulisci_input() {
-        $this->name=  htmlspecialchars( $this->name);
+        $this->name= htmlspecialchars( $this->name);
         $this->name= trim( $this->name);
-        $this->name=  stripslashes($this->name);
+        $this->name= stripslashes($this->name);
         $this->name= strtolower( $this->name);
         return $this->name;
     }
     
 
-   
+    
     function controllo_nome(){
      if (!preg_match("/^[a-zA-Z ]*$/", $this->name)) {
          return $this->errNomNum;
@@ -31,6 +31,19 @@ class Convalida {
      }
    
     }
+    function controllo_Pwd(){
+        if (!preg_match("/^[a-zA-Z0-9 ]*$/",$this->name)) {
+        return $this->errNomNum;
+        
+        
+    } else {
+        
+        return $this->pulisci_input();
+        
+    }
+    
+}
+     /*
      function controllo_Pwd(){
          
          if (!preg_match("/^[a-zA-Z0-9 ]*$/",$this->name)){

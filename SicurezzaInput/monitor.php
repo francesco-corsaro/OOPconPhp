@@ -44,9 +44,9 @@
         				if (isset($_POST['prova'])) {
         				    require 'backend/validitaform/ErroreInput.php';
         				    $nome = new Convalida($_POST['prova']);
-        				    echo $nome->controllo();
-        				    $pwd=new Convalida ($_POST['pwd']);
-        				    $pwd=controllo_Pwd();
+        				    echo $nome->controllo_nome();
+        				    /*$pwd=new Convalida ($_POST['pwd']);
+        				   echo $pwd->controllo_Pwd();*/
         				    //echo $prv->pulisci_input();
         				}
         				
