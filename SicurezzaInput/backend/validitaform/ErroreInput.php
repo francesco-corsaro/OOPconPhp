@@ -6,7 +6,7 @@ class Convalida {
     
     function __construct($name) {
         $this->name = $name;
-        $this->errNomNum = '<div class="col-12 errore">Sono consentiti solo lettere e numeri</div>';
+       
     }
     
     function pulisci_input() {
@@ -17,7 +17,14 @@ class Convalida {
         return $this->name;
     }
     
-
+    function convalida_CF(){
+        if (!preg_match("/^[a-zA-Z0-9 ]*$/",$this->name)){
+            echo "I valori del CF devono essere alfanumerici";
+        } else {
+            return $this->pulisci_input();
+            header(index.php);
+        }
+    }
     
     function controllo_nome(){
      if (!preg_match("/^[a-zA-Z ]*$/", $this->name)) {
@@ -27,8 +34,8 @@ class Convalida {
      
      } else {
         
-        return $this->pulisci_input();
-     
+        $this->pulisci_input();
+        header(index.php);
      }
    
     }
@@ -40,8 +47,8 @@ class Convalida {
     } else {
         $this->pulisci_input();
         $this->name= password_hash($this->name, PASSWORD_DEFAULT);
-        return $this->name;
-        
+        $this->name;
+        header(index.php);
     }
     
 }
@@ -53,8 +60,8 @@ class Convalida {
             
         } else {
             
-            return $this->pulisci_input();
-            
+            $this->pulisci_input();
+            header(index.php);
         }
     }
 }
